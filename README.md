@@ -22,7 +22,7 @@ destination = location where the game config file that will be overwritten.
 - `pip install -r requirements.txt`
 - Go to your NSSM directory or just copy nssm.exe to this project directory at C:/egpu-listener-auto-game-config
 - Look for your python3 executable path, and run the command below
-- `.\nssm.exe install EGPUListener "C:\Program Files\Python\python.exe" "C:\egpu-listener-auto-game-config"`
+- `.\nssm.exe install EGPUListener "C:\Program Files\Python\python.exe" "C:\egpu-listener-auto-game-config\listener.py"`
 - `.\nssm.exe start EGPUListener`
 - Service "EGPUListener" installed successfully! and will automatically started after reboot
 - If service is successfully installed and running, log file would be created at C:/egpu_listener.log
