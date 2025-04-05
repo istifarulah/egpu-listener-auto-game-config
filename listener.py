@@ -18,6 +18,9 @@ class EGPUListener(win32serviceutil.ServiceFramework):
         self.running = True
         self.LAST_APPLIED = None
 
+    def app_launcher(self):
+        subprocess.Popen([config.APP_PATH])
+
     def replace_files(self, config, key):
         for config_entry in config:
             to_copy_path = config_entry[key]
@@ -40,6 +43,9 @@ class EGPUListener(win32serviceutil.ServiceFramework):
                 log_file.write("iGPU Profile Applied\n")
 
         self.LAST_APPLIED = gpu
+
+        if config.APP_AUTO_LAUNCH == True:
+            self.app_launcher()
 
     def gpu_detector(self):
         c = wmi.WMI()
